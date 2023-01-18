@@ -10,7 +10,10 @@ const router = express.Router();
 router.use(express.json());
 
 router.get('/', function (req, res) {
-    res.send("hello world");
+    res.status(200).json({
+        success: true,
+        message: 'This Rest API for CV-FORM'
+    })
 })
 router.use('/profile', profileRoutes);
 router.use('/photo', PhotoUserRoutes);
