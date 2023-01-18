@@ -14,8 +14,8 @@ app.use("/api", routes);
 app.use(express.static("./app/upload/photo"))
 
 const port = process.env.APP_PORT
-const host = process.env.APP_URL
+const host = process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0'
 
 app.listen(port, host, () => {
-    console.log('listening on port ' + host + " and " + port)
+    console.log('listening on host ' + host + " and port " + port)
 })

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-prod": "node prod.mjs",
+    "start-prod": "NODE_ENV=production nodemon index.mjs",
     "start-dev": "nodemon index.mjs"
   },
   "keywords": [],

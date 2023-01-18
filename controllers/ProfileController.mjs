@@ -6,7 +6,9 @@ class ProfileController extends BaseController {
         const user_profile_code = req.params.user_profile_code
 
         const user = await UserModel.User.findOne({
-            id: user_profile_code
+            where: {
+                id: user_profile_code
+            }
         })
 
         if (user == null) {
